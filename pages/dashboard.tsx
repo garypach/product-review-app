@@ -10,9 +10,10 @@ import axios from 'axios'
 import ProductOneComponent from '../Components/UI/PRODUCT-one/productone'
 import Button from "react-bootstrap/Button";
 import Link from "next/link";
+import CreateProductComponent from '../Components/UI/CREATEPRODUCT/createproduct'
 
 const Dashboard: NextPage = () => {
-  const globalState = useStateContext()
+  const globalState:any = useStateContext()
   const ls = require('local-storage');
   const [data,setData] = useState([]);
 
@@ -35,6 +36,7 @@ const Dashboard: NextPage = () => {
     GetPosts()
   },[])
 
+  
   const showProducts= () => {
     console.log(data)
     return data.map((item:any, index)=>(
@@ -46,7 +48,7 @@ const Dashboard: NextPage = () => {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" >
         <Link href="/home">
           <a>
         <Button className="">
@@ -56,7 +58,14 @@ const Dashboard: NextPage = () => {
         </Button>
         </a>
         </Link>
-      <h1 className="text-lg mt-5">
+        <Button className="" onClick ={globalState.createPosttoggle}>
+        <span className="text-xs">
+          Create Post
+        </span>
+        </Button>
+        
+        <CreateProductComponent/>
+     <h1 className="text-lg mt-5">
           Dashboard
       </h1> 
       {showProducts()}

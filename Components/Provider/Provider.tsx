@@ -12,13 +12,19 @@ export function useStateContext(){
 
 
 export function Provider({ children }: ProviderProps){
-    const[user,setUser] = useState({})
-    
+    const[user,setUser] = useState({});
+    const [createPostOpen, setcreatePostOpen] = useState(false);
+    const createPosthide = () => setcreatePostOpen(false);
+    const createPosttoggle = () => setcreatePostOpen(!createPostOpen);
+
    
     return(
         <StateContext.Provider value = {{
             user,
-            setUser
+            setUser,
+            createPostOpen,
+            createPosthide,
+            createPosttoggle
             }}>
             {children}
         </StateContext.Provider>
