@@ -17,6 +17,14 @@ export function Provider({ children }: ProviderProps){
     const createPosthide = () => setcreatePostOpen(false);
     const createPosttoggle = () => setcreatePostOpen(!createPostOpen);
 
+    const [createAddfeedbackOpen, setcreateAddfeedbackOpen] = useState(false);
+    const createAddfeedbackhide = () => setcreateAddfeedbackOpen(false);
+    const createAddfeedbacktoggle = () => setcreateAddfeedbackOpen(!createAddfeedbackOpen);
+
+    const [createEditfeedbackOpen, setcreateEditfeedbackOpen] = useState(false);
+    const createEditfeedbackhide = () => setcreateEditfeedbackOpen(false);
+    const createEditfeedbacktoggle = () => setcreateEditfeedbackOpen(!createEditfeedbackOpen);
+
    
     return(
         <StateContext.Provider value = {{
@@ -24,7 +32,14 @@ export function Provider({ children }: ProviderProps){
             setUser,
             createPostOpen,
             createPosthide,
-            createPosttoggle
+            createPosttoggle,
+            createAddfeedbackOpen,
+            createAddfeedbackhide,
+            createAddfeedbacktoggle,
+            createEditfeedbackOpen,
+            createEditfeedbackhide,
+            createEditfeedbacktoggle
+
             }}>
             {children}
         </StateContext.Provider>

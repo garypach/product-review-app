@@ -1,0 +1,11 @@
+.mobilemenu{
+    overflow: scroll;
+    margin: 0 auto;
+    top: -100%;
+    color: black;
+    transition: .3s ease-in-out;
+}
+
+.mobileactive{
+    top: 20%;
+}

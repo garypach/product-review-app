@@ -4,8 +4,6 @@ import Image from 'next/image'
 import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useStateContext } from '../Components/Provider/Provider'
-import LoginUserComponent from '../Components/UI/LOGIN/Login'
-import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import ProductOneComponent from '../Components/UI/PRODUCT-one/productone'
 import Button from "react-bootstrap/Button";
@@ -40,15 +38,19 @@ const Dashboard: NextPage = () => {
   const showProducts= () => {
     console.log(data)
     return data.map((item:any, index)=>(
-      <div className="mt-4" key = {item.Post.id}>
+      <Link key = {item.Post.id} href={`/product/${item.Post.id}`}>
+      <a>
+      <div className="mt-4">
       <ProductOneComponent productTitle={`${item.Post.title}`}  commentAmount="0" />
       </div>
-
+      </a>
+      </Link>
     ))
   }
 
   return (
-    <div className="container mt-5" >
+    <div className="bg-gray-100 dark:bg-gray-200">
+ <div className="container mt-5" >
         <Link href="/home">
           <a>
         <Button className="">
@@ -60,7 +62,7 @@ const Dashboard: NextPage = () => {
         </Link>
         <Button className="" onClick ={globalState.createPosttoggle}>
         <span className="text-xs">
-          Create Post
+          Add Product
         </span>
         </Button>
         
@@ -70,6 +72,8 @@ const Dashboard: NextPage = () => {
       </h1> 
       {showProducts()}
     </div>
+    </div>
+   
   )
 }
 
