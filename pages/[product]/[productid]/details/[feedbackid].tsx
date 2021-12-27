@@ -42,7 +42,7 @@ const ProductPage: NextPage = (props: any) => {
         <EditFeedbackComponent post_id={commentData.post_id} comment_id={commentData.id} comment_title={commentData.title}/>
       <div className="bg-gray-200 mb-4 flex capitalize h-auto p-3 text-dark justify-between items-center">
       <Link href={`/products/${props.query.productid}`}>
-          <a>
+          <a className="no-underline">
               <div className="flex items-center">
               <FontAwesomeIcon icon={faChevronLeft} />
 
@@ -58,7 +58,7 @@ const ProductPage: NextPage = (props: any) => {
         </div>
       
       </div>
-      <FeedBackComponent feedbackTitle={commentData.title} feedbackComment={commentData.content} feedbackUpvotes="0" commentAmount="0"/>      
+      <FeedBackComponent feedbackTitle={commentData.title} feedbackComment={commentData.content} feedbackTag={commentData.tag} feedbackUpvotes="0" commentAmount="0"/>      
 
     </div>
   );

@@ -46,12 +46,13 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <div className="flex justify-between">
+    <div className="bg-project-medium-gray h-screen">
+ <div className="container pt-5  ">
+      <div className="flex justify-between font-bold items-center">
         Give others feedback
         <Link href="/dashboard">
           <a>
-        <Button className="">
+        <Button className="bg-regal-blue">
           Your Product Dashboard
         </Button>
         </a>
@@ -60,6 +61,8 @@ const Home: NextPage = () => {
 
       {showProducts()}
     </div>
+    </div>
+   
   )
 }
 

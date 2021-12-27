@@ -59,7 +59,7 @@ export default function CreateProductComponent(Props: CreateProps){
     }
 
     return(
-        <div className={`bg-white rounded-xl p-8 dark:bg-gray-0 flex justify-center container items-center h-screen flex-col ${styles.mobilemenu} ${globalState.createPostOpen ? styles.mobileactive : ''}`}>
+        <div className={`bg-white rounded-xl p-8 dark:bg-gray-0 w-96 max-w-lg flex justify-center container items-center flex-col ${styles.mobilemenu} ${globalState.createPostOpen ? styles.mobileactive : ''}`}>
         <Form onSubmit={handleSubmit}>
           <Form.Group  controlId="title" className="mb-4">
             <Form.Label>Product Title</Form.Label>
@@ -86,7 +86,6 @@ export default function CreateProductComponent(Props: CreateProps){
             Post
           </Button>
         </Form>
-
       </div>
     )
 }

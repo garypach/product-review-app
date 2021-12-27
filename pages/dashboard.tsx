@@ -5,7 +5,7 @@ import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useStateContext } from '../Components/Provider/Provider'
 import axios from 'axios'
-import ProductOneComponent from '../Components/UI/PRODUCT-one/productone'
+import ProductTwoComponent from '../Components/UI/PRODUCT-two/producttwo'
 import Button from "react-bootstrap/Button";
 import Link from "next/link";
 import CreateProductComponent from '../Components/UI/CREATEPRODUCT/createproduct'
@@ -39,9 +39,9 @@ const Dashboard: NextPage = () => {
     console.log(data)
     return data.map((item:any, index)=>(
       <Link key = {item.Post.id} href={`/product/${item.Post.id}`}>
-      <a>
-      <div className="mt-4">
-      <ProductOneComponent productTitle={`${item.Post.title}`}  commentAmount="0" />
+      <a className="no-underline">
+      <div className="mt-4  mx-4 ">
+      <ProductTwoComponent productTitle={`${item.Post.title}`}  commentAmount="0" />
       </div>
       </a>
       </Link>
@@ -49,9 +49,12 @@ const Dashboard: NextPage = () => {
   }
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-200">
- <div className="container mt-5" >
-        <Link href="/home">
+    <div className="bg-project-medium-gray h-fit lg:h-screen">
+<div className="container pt-5 flex flex-column" >
+   <div className="flex flex-column w-96 mx-auto text-center ">
+     <div className="flex justify-between">
+       <div>
+       <Link href="/home">
           <a>
         <Button className="">
         <span className="text-xs">
@@ -60,19 +63,31 @@ const Dashboard: NextPage = () => {
         </Button>
         </a>
         </Link>
+       </div>
+   
+        <div>
         <Button className="" onClick ={globalState.createPosttoggle}>
         <span className="text-xs">
           Add Product
         </span>
         </Button>
-        
-        <CreateProductComponent/>
-     <h1 className="text-lg mt-5">
+        </div>
+     </div>
+     <div>
+        <h1 className="text-2xl mt-5 font-bold">
           Dashboard
       </h1> 
-      {showProducts()}
+        </div>
+   </div>
+   <CreateProductComponent/>
+
+        
+      <div className="lg:flex lg:flex-wrap justify-center container">
+    {showProducts()}
     </div>
     </div>
+    </div>
+ 
    
   )
 }

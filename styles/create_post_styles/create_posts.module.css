@@ -1,9 +1,10 @@
 .mobilemenu{
-    position: fixed;
-    height: 400px;
+    position: absolute;
     overflow: scroll;
     margin: 0 auto;
     top: -100%;
+    left:0;
+    right:0;
     color: black;
     transition: .3s ease-in-out;
 }

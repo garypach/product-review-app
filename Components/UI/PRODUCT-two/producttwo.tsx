@@ -14,17 +14,17 @@ interface ProductProps {
     productTitle: string,
     commentAmount: any,
 }
-export default function ProductOneComponent(Props: ProductProps) {
+export default function ProductTwoComponent(Props: ProductProps) {
   return (
-    <div className="bg-white rounded-xl p-8 flex items-center justify-between">
+    <div className="bg-white border-4 border-indigo-100 border-t-regal-blue rounded-xl p-8  h-52 lg:h-60 mx-auto w-full lg:w-96 rounded-xl  flex  flex-column items-start justify-around container">
         <div>
         <div className="text-left space-y-4">
       <div className="text-regal-blue">
         {Props.productTitle}
       </div>
-      {/* <div className="text-gray-700 dark:text-gray-500">
+      <div className="text-gray-700 dark:text-gray-500">
         Product Description
-      </div>     */}
+      </div>    
       </div>
         </div>
         <div className="text-regal-blue">

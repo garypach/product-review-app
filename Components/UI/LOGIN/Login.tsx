@@ -55,14 +55,16 @@ export default function LoginUserComponent(Props: LoginProps) {
   }
   return (
     <div className="flex justify-center items-center h-screen flex-col">
-      <div className="text-xl text-left w-50">
+      
+      <Form onSubmit={handleSubmit}>
+      <div className="text-xl text-left ">
         <Link href="/">
-          <a>
+          <a className="no-underline">
             <FontAwesomeIcon icon={faArrowLeft} />
+            <span className="ml-3">Go Back</span>
           </a>
         </Link>
       </div>
-      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email" className="mb-4">
           <Form.Label>Email</Form.Label>
           <Form.Control

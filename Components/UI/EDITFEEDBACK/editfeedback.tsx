@@ -87,7 +87,7 @@ export default function EditFeedbackComponent(props:FeedbackProps){
         <Form onSubmit={handleSubmit}>
             <div className="text-dark font-bold mb-3 text-lg">
                 Editing `{props.comment_title}`
-                </div>
+            </div>
           <Form.Group  controlId="title" className="mb-4">
             <Form.Label>Feedback Title</Form.Label>
             <Form.Control

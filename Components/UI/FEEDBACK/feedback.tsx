@@ -15,6 +15,8 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 interface FeedbackProps {
     feedbackTitle: string,
     feedbackComment:string,
+    feedbackTag:string,
+
     commentAmount: any,
     feedbackUpvotes:any,
 }
@@ -22,13 +24,16 @@ export default function FeedBackComponent(Props: FeedbackProps) {
   return (
     <div className="bg-gray-100 sm:container mx-auto w-96 rounded-xl p-8 dark:bg-gray-0 flex flex-column ">
         <div>
-        <div className="mb-5 ">
+        <div className="mb-4 ">
       <div className="text-sky-700 dark:text-sky-700 mb-3">
         {Props.feedbackTitle}
       </div>
       <div className="text-gray-700 dark:text-gray-500">
         {Props.feedbackComment}
-      </div>    
+      </div>
+      <div className="text-sky-700 w-32  mt-8 bg-gray-200 py-2 px-3 font-bold rounded-xl text-sm cursor-pointer">
+        {Props.feedbackTag}
+      </div>      
       </div>
         </div>
         <div className="flex items-center justify-between">

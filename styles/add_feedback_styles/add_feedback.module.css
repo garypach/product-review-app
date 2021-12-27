@@ -1,6 +1,7 @@
 .mobilemenu{
-    position: fixed;
-    height: 400px;
+    position: absolute;
+    left:0;
+    right: 0;
     overflow: scroll;
     margin: 0 auto;
     top: -100%;
