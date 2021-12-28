@@ -22,31 +22,29 @@ interface FeedbackProps {
 }
 export default function FeedBackComponent(Props: FeedbackProps) {
   return (
-    <div className="bg-gray-100 sm:container mx-auto w-96 rounded-xl p-8 dark:bg-gray-0 flex flex-column ">
+    <div className="bg-white relative sm:container w-100 mx-auto rounded-xl p-8 flex flex-col-reverse md:flex-row items-start">
+          <div className="text-regal-blue bg-project-medium-gray w-fit py-2 px-3 font-bold rounded-xl text-sm cursor-pointer mr-16 ">
+        <FontAwesomeIcon icon={faThumbsUp} className="mr-2 hover:text-sky-700"/>
+        {Props.feedbackUpvotes}
+        </div>
         <div>
         <div className="mb-4 ">
-      <div className="text-sky-700 dark:text-sky-700 mb-3">
+      <div className="text-regal-blue mb-3">
         {Props.feedbackTitle}
       </div>
       <div className="text-gray-700 dark:text-gray-500">
         {Props.feedbackComment}
       </div>
-      <div className="text-sky-700 w-32  mt-8 bg-gray-200 py-2 px-3 font-bold rounded-xl text-sm cursor-pointer">
+      <div className="text-regal-blue w-32 bg-project-medium-gray mt-8 py-2 px-3 font-bold rounded-xl text-sm cursor-pointer">
         {Props.feedbackTag}
       </div>      
       </div>
         </div>
-        <div className="flex items-center justify-between">
-        <div className="text-dark bg-gray-200 py-2 px-3 font-bold rounded-xl text-sm cursor-pointer">
-        <FontAwesomeIcon icon={faThumbsUp} className="mr-2 hover:text-sky-700"/>
-        {Props.feedbackUpvotes}
-        </div>
-        <div className="">
+      
+        <div className="absolute right-10 md:top-20">
         <FontAwesomeIcon icon={faComment} className="mr-2 text-stone-400"/>
         {Props.commentAmount}
         </div>
-        </div>
-      
     </div>
   );
 }

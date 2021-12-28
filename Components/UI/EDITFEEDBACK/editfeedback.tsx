@@ -82,7 +82,7 @@ export default function EditFeedbackComponent(props:FeedbackProps){
       }   
 
     return(
-        <div className={`bg-white absolute left-0 right-0 w-96 rounded-xl p-8 dark:bg-gray-0 flex justify-center  items-center flex-col ${styles.mobilemenu} ${globalState.createEditfeedbackOpen ? styles.mobileactive : ''}`}>
+        <div className={`bg-white absolute left-0 right-0  z-10 w-96 rounded-xl p-8 dark:bg-gray-0 flex justify-center  items-center flex-col ${styles.mobilemenu} ${globalState.createEditfeedbackOpen ? styles.mobileactive : ''}`}>
 
         <Form onSubmit={handleSubmit}>
             <div className="text-dark font-bold mb-3 text-lg">
