@@ -57,13 +57,17 @@ export default function LoginUserComponent(Props: LoginProps) {
     <div className="flex justify-center items-center h-screen flex-col">
       
       <Form onSubmit={handleSubmit}>
-      <div className="text-xl text-left ">
+      <div className="text-xl text-left flex">
         <Link href="/">
           <a className="no-underline">
             <FontAwesomeIcon icon={faArrowLeft} />
             <span className="ml-3">Go Back</span>
           </a>
         </Link>
+
+        <div className="font-bold ml-5">
+          LOGIN
+          </div>
       </div>
         <Form.Group controlId="email" className="mb-4">
           <Form.Label>Email</Form.Label>
@@ -71,6 +75,7 @@ export default function LoginUserComponent(Props: LoginProps) {
             autoFocus
             type="email"
             value={email}
+            className="bg-project-light-gray"
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
@@ -79,6 +84,8 @@ export default function LoginUserComponent(Props: LoginProps) {
           <Form.Control
             type="password"
             value={password}
+            className="bg-project-light-gray"
+
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>

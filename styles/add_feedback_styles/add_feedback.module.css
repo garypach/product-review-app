@@ -4,7 +4,7 @@
     right: 0;
     overflow: scroll;
     margin: 0 auto;
-    top: -100%;
+    top: -200%;
     color: black;
     transition: .3s ease-in-out;
 }

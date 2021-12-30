@@ -16,14 +16,34 @@ interface FeedbackProps {
     feedbackTitle: string,
     feedbackComment:string,
     feedbackTag:string,
-
     commentAmount: any,
     feedbackUpvotes:any,
+    commentid:any,
 }
+
 export default function FeedBackComponent(Props: FeedbackProps) {
+  const ls = require('local-storage');
+
+  async function AddVote() {
+    try {
+      const response = await axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/commentvotes/',
+        data: {
+            "comment_id":Props.commentid,
+            "dir":1,
+        },
+        headers:{
+          "Authorization": ls.get("token")
+        }
+    });
+    } catch (error) {
+      console.error(error);
+    }
+  }
   return (
     <div className="bg-white relative sm:container w-100 mx-auto rounded-xl p-8 flex flex-col-reverse md:flex-row items-start">
-          <div className="text-regal-blue bg-project-medium-gray w-fit py-2 px-3 font-bold rounded-xl text-sm cursor-pointer mr-16 ">
+          <div onClick={AddVote} className="text-regal-blue z-40 bg-project-medium-gray w-fit py-2 px-3 font-bold rounded-xl text-sm cursor-pointer mr-16 ">
         <FontAwesomeIcon icon={faThumbsUp} className="mr-2 hover:text-sky-700"/>
         {Props.feedbackUpvotes}
         </div>
@@ -35,7 +55,7 @@ export default function FeedBackComponent(Props: FeedbackProps) {
       <div className="text-gray-700 dark:text-gray-500">
         {Props.feedbackComment}
       </div>
-      <div className="text-regal-blue w-32 bg-project-medium-gray mt-8 py-2 px-3 font-bold rounded-xl text-sm cursor-pointer">
+      <div className="text-regal-blue  bg-project-medium-gray mt-8 py-2 px-3 font-bold rounded-xl text-sm cursor-pointer w-fit">
         {Props.feedbackTag}
       </div>      
       </div>

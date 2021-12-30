@@ -13,7 +13,40 @@ import styles from '../styles/Home.module.css'
 
 const Index: NextPage = () => {
   const globalState = useStateContext()
+  const router = useRouter();
+  var ls = require("local-storage");
 
+  const axios = require("axios").default;
+
+  async function LoginGuest() {
+    let Form = new FormData();
+    Form.append("username", "hello2@gmail.com");
+    Form.append("password", "123");
+    try {
+      const response = await axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/login",
+        data: Form,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      ls.set(
+        "token",
+        response.data.token_type + " " + response.data.access_token
+      );
+      ls.set(
+        "id",
+        response.data.id 
+      );
+      router.push("/home");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    LoginGuest();
+  }
   return (
     <div className={styles.main}>
         <div>
@@ -35,9 +68,12 @@ const Index: NextPage = () => {
      <Button>Create User</Button>
      </a>
      </Link>
+
    </div>
-   
      </div>
+     <Button onClick={handleSubmit} className="mt-4">
+          Continue as Guest
+        </Button>
      </div>
   )
 }

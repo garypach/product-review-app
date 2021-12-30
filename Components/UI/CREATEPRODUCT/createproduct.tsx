@@ -66,6 +66,7 @@ export default function CreateProductComponent(Props: CreateProps){
             <Form.Control
               autoFocus
               type="title"
+              className="bg-project-light-gray"
               value={productTitle}
               onChange={(e) => setProductTitle(e.target.value)}
             />
@@ -76,15 +77,20 @@ export default function CreateProductComponent(Props: CreateProps){
               type="body"
               value={productBody}
               as="textarea" rows={3}
+              className="bg-project-light-gray"
+
               onChange={(e) => setProductBody(e.target.value)}
             />
           </Form.Group>
-          <Button  onClick = {onCancel} className="mt-4 mr-5">
-            Cancel
-          </Button>
-          <Button type="submit" disabled={!validateForm()} className="mt-4">
-            Post
-          </Button>
+          <div className="flex flex-column">
+        <Button type="submit" disabled={!validateForm()} className="mt-4 bg-regal-blue text-light font-bold" variant="flat">
+          Add Feedback
+        </Button>
+        <Button onClick={onCancel} className="mt-4 font-bold bg-slate-600 text-light	" variant ="flat">
+          Cancel
+        </Button>
+       
+        </div>
         </Form>
       </div>
     )

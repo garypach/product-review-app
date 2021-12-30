@@ -41,7 +41,7 @@ const Dashboard: NextPage = () => {
       <Link key = {item.Post.id} href={`/product/${item.Post.id}`}>
       <a className="no-underline">
       <div className="mt-4  mx-4 ">
-      <ProductTwoComponent productTitle={`${item.Post.title}`}  commentAmount="0" />
+      <ProductTwoComponent productTitle={`${item.Post.title}`}  commentAmount={item.comments} />
       </div>
       </a>
       </Link>
@@ -49,7 +49,7 @@ const Dashboard: NextPage = () => {
   }
 
   return (
-    <div className="bg-project-medium-gray h-fit lg:h-screen">
+    <div className="bg-project-medium-gray min-h-screen lg:h-screen">
 <div className="container pt-5 flex flex-column" >
    <div className="flex flex-column w-96 mx-auto text-center ">
      <div className="flex justify-between">
@@ -80,8 +80,6 @@ const Dashboard: NextPage = () => {
         </div>
    </div>
    <CreateProductComponent/>
-
-        
       <div className="lg:flex lg:flex-wrap justify-center container">
     {showProducts()}
     </div>

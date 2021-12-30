@@ -13,6 +13,7 @@ interface FeedbackProps {
 export default function AddFeedbackComponent(props: FeedbackProps) {
   const [feedbackTitle, setFeedbackTitle] = useState("");
   const [feedbackBody, setFeedbackBody] = useState("");
+  const [feedbackTag, setFeedbackTag] = useState("Enhancement");
   const router = useRouter();
   const globalState: any = useStateContext();
   const axios = require("axios").default;
@@ -26,6 +27,7 @@ export default function AddFeedbackComponent(props: FeedbackProps) {
         data: {
           title: feedbackTitle,
           content: feedbackBody,
+          tag:feedbackTag,
           post_id: props.post_id,
         },
         headers: {
@@ -84,11 +86,11 @@ export default function AddFeedbackComponent(props: FeedbackProps) {
         <div className="text-dark font-bold mb-3 text-lg">
                 Feedback Category
         </div>
-        <Form.Select aria-label="Default select category" className="p-2 bg-gray-200 mb-4">
-          <option value="1">Enchancement</option>
-          <option value="2">UI</option>
-          <option value="3">UX</option>
-          <option value="4">Bug</option>
+        <Form.Select onChange={(e) => setFeedbackTag(e.target.value)} aria-label="Default select category" className="p-2 bg-gray-200 mb-4">
+          <option value="Enhancement">Enchancement</option>
+          <option value="UI">UI</option>
+          <option value="UX">UX</option>
+          <option value="Bug">Bug</option>
         </Form.Select>
         <Form.Group controlId="body">
           <Form.Label>

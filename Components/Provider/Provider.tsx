@@ -1,4 +1,4 @@
-import React, {useContext, useState, FC, ReactChildren, ReactChild} from "react";
+import React, {useContext, useState, FC, ReactChildren, ReactChild, useEffect} from "react";
 
 export const StateContext = React.createContext<unknown>(undefined);
 
@@ -24,7 +24,6 @@ export function Provider({ children }: ProviderProps){
     const [createEditfeedbackOpen, setcreateEditfeedbackOpen] = useState(false);
     const createEditfeedbackhide = () => setcreateEditfeedbackOpen(false);
     const createEditfeedbacktoggle = () => setcreateEditfeedbackOpen(!createEditfeedbackOpen);
-
    
     return(
         <StateContext.Provider value = {{
@@ -39,7 +38,6 @@ export function Provider({ children }: ProviderProps){
             createEditfeedbackOpen,
             createEditfeedbackhide,
             createEditfeedbacktoggle
-
             }}>
             {children}
         </StateContext.Provider>

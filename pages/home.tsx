@@ -39,14 +39,18 @@ const Home: NextPage = () => {
     console.log(data)
     return data.map((item:any, index)=>(
       <div className="mt-4" key = {item.Post.id}>
-      <ProductOneComponent productTitle={`${item.Post.title}`}  commentAmount="0" />
+      <Link href={`/product/${item.Post.id}`}>
+      <a className="no-underline">
+      <ProductOneComponent productTitle={`${item.Post.title}`}  commentAmount={item.comments} />
+      </a>
+      </Link>
       </div>
 
     ))
   }
 
   return (
-    <div className="bg-project-medium-gray h-screen">
+    <div className="bg-project-medium-gray min-h-screen">
  <div className="container pt-5  ">
       <div className="flex justify-between font-bold items-center">
         Give others feedback

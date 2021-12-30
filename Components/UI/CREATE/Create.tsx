@@ -43,14 +43,18 @@ export default function CreateUserComponent(Props: CreateProps) {
   return (
     <div className="flex justify-center items-center h-screen flex-col">
       <Form onSubmit={handleSubmit}>
-        <div className="text-xl text-left ">
-          <Link href="/">
-            <a className="no-underline">
-              <FontAwesomeIcon icon={faArrowLeft} />
-              <span className="ml-3">Go Back</span>
-            </a>
-          </Link>
-        </div>
+      <div className="text-xl text-left flex">
+        <Link href="/">
+          <a className="no-underline">
+            <FontAwesomeIcon icon={faArrowLeft} />
+            <span className="ml-3">Go Back</span>
+          </a>
+        </Link>
+
+        <div className="font-bold ml-5">
+          Create User
+          </div>
+      </div>
         <Form.Group controlId="email" className="mb-4">
           <Form.Label>Email</Form.Label>
           <Form.Control
