@@ -51,7 +51,7 @@ const Index: NextPage = () => {
     <div className={styles.main}>
         <div>
       <h1 className={styles.title}>
-          Welcome to Feedback!
+          Welcome to Product Review!
       </h1> 
       </div>
     <div className={styles.links}>
