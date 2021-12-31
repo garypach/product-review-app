@@ -35,6 +35,7 @@ export default function AddFeedbackComponent(props: FeedbackProps) {
         },
       });
       globalState.createAddfeedbackhide();
+      
       setFeedbackTitle("");
       setFeedbackBody("");
     } catch (error) {

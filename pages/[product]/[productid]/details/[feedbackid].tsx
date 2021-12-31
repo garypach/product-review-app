@@ -14,10 +14,19 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import EditFeedbackComponent from "../../../../Components/UI/EDITFEEDBACK/editfeedback";
 import { useStateContext } from "../../../../Components/Provider/Provider";
 
+interface Array {
+  title: string;
+  id: number;
+  Comment:any;
+  post_id:number;
+  commentvotes:number;
+  replies:number;
+}
+
 const ProductPage: NextPage = (props: any) => {
   const globalState: any = useStateContext();
   const ls = require("local-storage");
-  const [commentData, setCommentData] = useState([] as any[]);
+  const [commentData, setCommentData] = useState<Array>({ title: "", id: null,Comment:null,post_id:null,commentvotes:null,replies:null });
   const [replyData, setReplyData] = useState([] as any[]);
   const [commentBody, setCommentBody] = useState("");
 
@@ -99,8 +108,8 @@ const ProductPage: NextPage = (props: any) => {
     <div className=" bg-project-medium-gray p-4 min-h-screen relative">
       <EditFeedbackComponent
         post_id={commentData.post_id}
-        comment_id={commentData.id}
-        comment_title={commentData.Comment?.title}
+        comment_id={commentData?.id}
+        comment_title={commentData?.Comment?.title}
       />
       <div className=" mb-4 flex capitalize h-auto text-dark justify-between items-center">
         <Link href={`/products/${props.query.productid}`}>
@@ -122,7 +131,7 @@ const ProductPage: NextPage = (props: any) => {
         </div>
       </div>
       <FeedBackComponent
-        feedbackTitle={commentData.Comment?.title}
+        feedbackTitle={commentData.Comment.title}
         feedbackComment={commentData.Comment?.content}
         feedbackTag={commentData.Comment?.tag}
         feedbackUpvotes={commentData.commentvotes}

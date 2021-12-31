@@ -13,10 +13,15 @@ import FeedBackComponent from "../../../Components/UI/FEEDBACK/feedback";
 import { useStateContext } from "../../../Components/Provider/Provider";
 import AddFeedbackComponent from "../../../Components/UI/ADDFEEDBACK/addfeedback";
 
+interface Array {
+  title: string;
+  id: number;
+}
+
 const ProductPage: NextPage = (props: any) => {
   const globalState: any = useStateContext();
   const ls = require("local-storage");
-  const [data, setData] = useState([] as any[]);
+  const [data, setData] = useState<Array>({ title: "", id: null });
   const [commentData, setCommentData] = useState([] as any[]);
   const [commentDataCopy, setCommentDataCopy] = useState([] as any[]);
 
@@ -132,7 +137,7 @@ const ProductPage: NextPage = (props: any) => {
     <div className="sm:p-4 h-fit lg:flex lg:items-start lg:justify-center bg-project-medium-gray min-h-screen">
       <div className="sm:flex sm:mb-4 lg:w-100 sm:justify-between lg:flex-col lg:mr-10">
         <div className="bg-gray-100 relative capitalize h-auto p-3 text-light bg-gradient-to-r from-violet-500 to-fuchsia-500 flex-column  sm:rounded-xl sm:w-80 sm:mr-4 lg:m-0 lg:mb-5 lg:w-100">
-          <div className="font-bold text-lg">{data.title}</div>
+          <div className="font-bold text-lg">{data?.title}</div>
           <div className="text-s italic">Feedback Board</div>
         </div>
         <div className=" w-full hidden bg-white rounded-xl p-3 dark:bg-gray-0 sm:h-26 sm:flex sm:flex-wrap sm:justify-center lg:w-80">
@@ -188,7 +193,7 @@ const ProductPage: NextPage = (props: any) => {
               </Dropdown.Menu>
             </Dropdown>{" "}
           </div>
-          <AddFeedbackComponent post_id={data.id} />
+          <AddFeedbackComponent post_id={data?.id} />
           <Button
             className="bg-fuchsia-600 text-light font-bold"
             variant="flat"
