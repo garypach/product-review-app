@@ -65,7 +65,7 @@ export default function AddFeedbackComponent(props: FeedbackProps) {
 
   return (
     <div
-      className={`bg-white rounded-xl z-10 w-96 p-8 dark:bg-gray-0 flex justify-center container items-center flex-col ${
+      className={`bg-white rounded-xl z-50 w-96 p-8 dark:bg-gray-0 flex justify-center container items-center flex-col ${
         styles.mobilemenu
       } ${globalState.createAddfeedbackOpen ? styles.mobileactive : ""}`}
     >
@@ -109,10 +109,10 @@ export default function AddFeedbackComponent(props: FeedbackProps) {
           />
         </Form.Group>
         <div className="flex flex-column">
-        <Button type="submit" disabled={!validateForm()} className="mt-4 bg-fuchsia-600 text-light font-bold" variant="flat">
+        <Button type="submit" disabled={!validateForm()} className="mt-4 bg-fuchsia-600 z-50 text-light font-bold" variant="flat">
           Add Feedback
         </Button>
-        <Button onClick={onCancel} className="mt-4 font-bold bg-slate-600 text-light	" variant ="flat">
+        <Button onClick={onCancel} className="mt-4 font-bold bg-slate-600 text-light z-50	" variant ="flat">
           Cancel
         </Button>
        
