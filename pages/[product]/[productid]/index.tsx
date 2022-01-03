@@ -86,7 +86,7 @@ const ProductPage: NextPage = (props: any) => {
     {
       if (commentData.length === 0) {
         return (
-          <div className="w-full  bg-white flex flex-column items-center relative rounded-xl p-8 mt-4">
+          <div className="w-full  z-1 bg-white flex flex-column items-center rounded-xl p-8 mt-4">
             <Image
               src="/illustration-empty.svg"
               alt="Picture of the author"
