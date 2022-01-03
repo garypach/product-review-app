@@ -2,13 +2,8 @@ module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./Components/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  purge: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    // Add more here
-],
-  darkMode: 'class',
   theme: {
     extend: {
       colors:{
@@ -20,5 +15,4 @@ module.exports = {
   },
   plugins: [],
   important: true,
-
 }

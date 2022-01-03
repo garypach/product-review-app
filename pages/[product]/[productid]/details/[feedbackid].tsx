@@ -8,11 +8,11 @@ import Button from "react-bootstrap/Button";
 import Link from "next/link";
 import Form from "react-bootstrap/Form";
 
-import FeedBackComponent from "../../../../Components/UI/FEEDBACK/feedback";
+import FeedBackComponent from "../../../../components/UI/FEEDBACK/feedback";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import EditFeedbackComponent from "../../../../Components/UI/EDITFEEDBACK/editfeedback";
-import { useStateContext } from "../../../../Components/Provider/Provider";
+import EditFeedbackComponent from "../../../../components/UI/EDITFEEDBACK/editfeedback";
+import { useStateContext } from "../../../../components/Provider/Provider";
 
 interface Array {
   title: string;

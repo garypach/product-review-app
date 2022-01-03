@@ -9,9 +9,9 @@ import Link from "next/link";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
-import FeedBackComponent from "../../../Components/UI/FEEDBACK/feedback";
-import { useStateContext } from "../../../Components/Provider/Provider";
-import AddFeedbackComponent from "../../../Components/UI/ADDFEEDBACK/addfeedback";
+import FeedBackComponent from "../../../components/UI/FEEDBACK/feedback";
+import { useStateContext } from "../../../components/Provider/Provider";
+import AddFeedbackComponent from "../../../components/UI/ADDFEEDBACK/addfeedback";
 
 interface Array {
   title: string;
