@@ -25,7 +25,7 @@ const Index: NextPage = () => {
     try {
       const response = await axios({
         method: "post",
-        url: "http://127.0.0.1:8000/login",
+        url: "https://fastapi-socialmedia-crud.herokuapp.com/login",
         data: Form,
         headers: { "Content-Type": "multipart/form-data" },
       });

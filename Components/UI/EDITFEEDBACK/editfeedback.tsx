@@ -24,7 +24,7 @@ export default function EditFeedbackComponent(props:FeedbackProps){
     try {
       const response = await axios({
         method: 'put',
-        url: `http://127.0.0.1:8000/comments/${props.comment_id}`,
+        url: `https://fastapi-socialmedia-crud.herokuapp.com/comments/${props.comment_id}`,
         data: {
             "title":feedbackTitle,
             "content":feedbackBody,

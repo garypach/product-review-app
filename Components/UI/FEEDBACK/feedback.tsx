@@ -28,7 +28,7 @@ export default function FeedBackComponent(Props: FeedbackProps) {
     try {
       const response = await axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/commentvotes/',
+        url: 'https://fastapi-socialmedia-crud.herokuapp.com/commentvotes/',
         data: {
             "comment_id":Props.commentid,
             "dir":1,

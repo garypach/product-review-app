@@ -34,7 +34,7 @@ const ProductPage: NextPage = (props: any) => {
     try {
       const response = await axios({
         method: "post",
-        url: "http://127.0.0.1:8000/replys",
+        url: "https://fastapi-socialmedia-crud.herokuapp.com/replys",
         data: {
           content: commentBody,
           comment_id: props.query.feedbackid,
@@ -63,7 +63,7 @@ const ProductPage: NextPage = (props: any) => {
       try {
         const response = await axios({
           method: "get",
-          url: `http://127.0.0.1:8000/comments/comment/${props.query.feedbackid}`,
+          url: `https://fastapi-socialmedia-crud.herokuapp.com/comments/comment/${props.query.feedbackid}`,
           headers: {
             Authorization: ls.get("token"),
           },
@@ -78,7 +78,7 @@ const ProductPage: NextPage = (props: any) => {
       try {
         const response = await axios({
           method: "get",
-          url: `http://127.0.0.1:8000/replys/${props.query.feedbackid}`,
+          url: `https://fastapi-socialmedia-crud.herokuapp.com/replys/${props.query.feedbackid}`,
           headers: {
             Authorization: ls.get("token"),
           },

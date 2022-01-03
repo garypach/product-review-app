@@ -19,7 +19,7 @@ const Dashboard: NextPage = () => {
     try {
       const response = await axios({
         method: 'get',
-        url: 'http://127.0.0.1:8000/posts/userposts',
+        url: 'https://fastapi-socialmedia-crud.herokuapp.com/posts/userposts',
         headers:{
           "Authorization": ls.get("token")
         }

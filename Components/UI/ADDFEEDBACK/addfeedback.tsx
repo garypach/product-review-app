@@ -23,7 +23,7 @@ export default function AddFeedbackComponent(props: FeedbackProps) {
     try {
       const response = await axios({
         method: "post",
-        url: "http://127.0.0.1:8000/comments/",
+        url: "https://fastapi-socialmedia-crud.herokuapp.com/comments/",
         data: {
           title: feedbackTitle,
           content: feedbackBody,

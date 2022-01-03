@@ -25,7 +25,7 @@ export default function CreateProductComponent(Props: CreateProps){
     try {
       const response = await axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/posts/',
+        url: 'https://fastapi-socialmedia-crud.herokuapp.com/posts/',
         data: {
             "title":productTitle,
             "content":productBody,

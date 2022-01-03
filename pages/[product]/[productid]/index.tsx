@@ -33,7 +33,7 @@ const ProductPage: NextPage = (props: any) => {
       try {
         const response = await axios({
           method: "get",
-          url: `http://127.0.0.1:8000/posts/${props.query.productid}`,
+          url: `https://fastapi-socialmedia-crud.herokuapp.com/posts/${props.query.productid}`,
           headers: {
             Authorization: ls.get("token"),
           },
@@ -47,7 +47,7 @@ const ProductPage: NextPage = (props: any) => {
         try {
           const response = await axios({
             method: "get",
-            url: `http://127.0.0.1:8000/comments/${props.query.productid}`,
+            url: `https://fastapi-socialmedia-crud.herokuapp.com/comments/${props.query.productid}`,
             headers: {
               Authorization: ls.get("token"),
             },
