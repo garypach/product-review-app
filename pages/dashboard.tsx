@@ -3,12 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { useStateContext } from '../components/Provider/Provider'
+import { useStateContext } from '../Components/Provider/Provider'
 import axios from 'axios'
-import ProductTwoComponent from '../components/UI/PRODUCT-two/producttwo'
+import ProductTwoComponent from '../Components/UI/PRODUCT-two/producttwo'
 import Button from "react-bootstrap/Button";
 import Link from "next/link";
-import CreateProductComponent from '../components/UI/CREATEPRODUCT/createproduct'
+import CreateProductComponent from '../Components/UI/CREATEPRODUCT/createproduct'
 
 const Dashboard: NextPage = () => {
   const globalState:any = useStateContext()

@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Router, useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { useStateContext } from '../components/Provider/Provider'
-import LoginUserComponent from '../components/UI/LOGIN/Login'
+import { useStateContext } from '../Components/Provider/Provider'
+import LoginUserComponent from '../Components/UI/LOGIN/Login'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
-import ProductOneComponent from '../components/UI/PRODUCT-one/productone'
+import ProductOneComponent from '../Components/UI/PRODUCT-one/productone'
 import Button from "react-bootstrap/Button";
 import Link from "next/link";
 
