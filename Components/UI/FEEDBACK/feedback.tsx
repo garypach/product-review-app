@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useStateContext } from "../../Provider/Provider";
 import localStorage from "local-storage";
 import styles from "../../../styles/login_styles/login.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
