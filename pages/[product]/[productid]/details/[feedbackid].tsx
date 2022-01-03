@@ -26,7 +26,7 @@ interface Array {
 const ProductPage: NextPage = (props: any) => {
   const globalState: any = useStateContext();
   const ls = require("local-storage");
-  const [commentData, setCommentData] = useState<Array>({ title: "", id: null,Comment:null,post_id:null,commentvotes:null,replies:null });
+  const [commentData, setCommentData] = useState<Array>({ title: "", id: null,Comment:{},post_id:null,commentvotes:null,replies:null });
   const [replyData, setReplyData] = useState([] as any[]);
   const [commentBody, setCommentBody] = useState("");
 
