@@ -3,6 +3,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./pages/**/**/**/*.{js,ts,jsx,tsx}",
     "./components/**/**/**/*.{js,ts,jsx,tsx}",
+    './src/styles/**/*.css'
 
   ],
   theme: {
@@ -16,4 +17,7 @@ module.exports = {
   },
   plugins: [],
   important: true,
+  enabled: process.env.NODE_ENV === "production",
+
+
 }
